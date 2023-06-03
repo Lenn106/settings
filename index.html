@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lenn106 - Bio Website</title>
   <style>
-    body {
+   body {
       color: #ffffff;
       font-family: Arial, sans-serif;
       margin: 0;
@@ -160,7 +160,7 @@
 
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
-    particlesJS("particles-js", {
+particlesJS("particles-js", {
       particles: {
         number: {
           value: 80,
@@ -285,7 +285,7 @@
             description: 'An Old i-Ready Hack I made.',
             link: 'https://lenn106.github.io/NeoMenu'
           },
-           youtube: {
+          youtube: {
             title: 'HELP',
             description: 'please help me I dont know how search bars work',
             link: 'https://dsc.gg/lenn106'
@@ -307,6 +307,9 @@
               if (containsBlockedWords(searchQuery, blockedWords)) {
                 searchResults.innerHTML = 'This search contains blocked words.';
                 searchResults.classList.add('open');
+              } else if (searchQuery === 'chachaslide') {
+                const audio = new Audio('https://github.com/Lenn106/lenn106.github.io/raw/c6931511fce0f17c386f4fa3e1d925a93c15eb57/chacha.mp3');
+                audio.play();
               } else if (searchQuery in searchResultData) {
                 const resultHTML = `
                   <h3>${searchResultData[searchQuery].title}</h3>
