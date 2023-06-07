@@ -1,35 +1,32 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lenn106 - Bio Website</title>
-  <meta property="og:title" content="Lenn106 - Bio Website">
-<meta property="og:description" content="Welcome to Lenn106's bio website. Explore projects, videos, and more.">
-<meta property="og:image" content="https://example.com/path-to-image.jpg">
-<meta property="og:url" content="https://lenn106.github.io">
-<meta property="og:type" content="website">
-
+  <title>Settings Page</title>
   <style>
     body {
-      color: #ffffff;
+      text-align: center;
       font-family: Arial, sans-serif;
-      margin: 0;
+      background-color: #111111;
+      margin-top: 150px;
     }
-
-    #particles-js {
+    
+    .footer {
       position: fixed;
-      width: 100%;
-      height: 100%;
-      background-color: #111;
-      background-size: cover;
-      background-position: center;
-      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background-color: #333333;
+      color: #ffffff;
+      font-size: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-
-    h1 {
+    
+        h1 {
       color: #ffffff;
       margin: 0;
       padding: 20px;
@@ -37,162 +34,143 @@
       text-align: center;
     }
 
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      height: 80vh; /* Adjust the height value as desired */
-    }
-
-    .box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px; /* Adjust the padding value as desired */
-      background-color: #323232;
-      border-radius: 10px;
-      width: 60%; /* Adjust the width value as desired */
-      max-width: 400px;
+    
+    .settings-container {
       margin-top: 120px;
-      position: relative; /* Added */
     }
-
-    .box button {
-      margin-bottom: 10px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      background-color: #323232;
+    
+    .settings-option {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    .settings-label {
+      font-size: 18px;
       color: #ffffff;
+      margin-right: 10px;
+      width: 200px;
+      text-align: right;
+    }
+    
+    .settings-input {
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: none;
+      background-color: #333333;
+      color: #ffffff;
+    }
+    
+    .settings-button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #333333;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
-      outline: none;
       transition: background-color 0.3s ease;
     }
-
-    .box button:hover {
-      background-color: #525252;
+    
+    .settings-button:hover {
+      background-color: #555555;
     }
 
-    .search-bar {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .search-bar input {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: #525252;
-      color: #ffffff;
-      font-size: 14px;
-      caret-color: #ffffff;
-      outline: none;
-    }
-
-    .search-results {
-      position: absolute;
-      top: 100%;
+    #particles-js {
+      position: fixed;
+      top: 60px;
       left: 0;
-      right: 0;
-      padding: 10px;
-      background-color: #525252;
-      color: #ffffff;
-      border-radius: 5px;
-      font-size: 14px;
-      display: none;
-      z-index: 1; /* Added */
+      width: 100%;
+      height: calc(100% - 60px);
+      z-index: -1;
     }
-
-    .search-results.open {
-      display: block;
+    
+    .theme-list {
+      margin-top: 40px;
     }
-
-    .search-results .close-button {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      padding: 5px;
+    
+    .theme-item {
+      margin-bottom: 10px;
       color: #ffffff;
-      font-size: 16px;
-      font-weight: bold;
-      background-color: transparent;
-      border: none;
-      outline: none;
       cursor: pointer;
     }
-
-    .footer {
-      background-color: #323232;
-      height: 100px;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #ffffff;
-      font-size: 14px;
+    
+    .theme-item:hover {
+      text-decoration: underline;
     }
-
-    .footer a {
-      color: #ffffff;
-      text-decoration: none;
-    }
+    
   </style>
 </head>
-
 <body>
-  <div id="particles-js"></div>
-  <h1>Lenn106</h1>
-  <div class="container">
-    <div class="box">
-      <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Search..." onkeyup="handleSearch(event)">
-      </div>
-      <div id="searchResults" class="search-results"></div>
-      <button onclick="window.location.href='https://lenn106.github.io/projects'">GitHub Projects</button>
-      <button onclick="window.location.href='https://lenn106.github.io/about'">About Me</button>
-      <button onclick="window.location.href='https://lenn106.github.io/videos'">Videos</button>
-      <button onclick="window.open('https://lenn106.github.io/extras')">Extras</button>
-      <button onclick="window.location.href='https://lenn106.github.io/settings'">Settings</button>
-    </div>
-  </div>
   <div class="footer">
-    <p>All software on this website is open source and free to use, unless otherwise stated. Learn more at <a href="https://unlicense.org/" target="_blank" rel="noopener noreferrer">https://unlicense.org/</a></p>
+    </h1>Lenn106</h1>
+  </div>
+
+  <div id="particles-js"></div>
+
+  <div class="settings-container">
+    <div class="settings-option">
+      <label for="interactivity" class="settings-label">Interactivity:</label>
+      <select id="interactivity" class="settings-input">
+        <option value="true">On</option>
+        <option value="false">Off</option>
+      </select>
+    </div>
+    
+    <div class="settings-option">
+      <label for="particle-color" class="settings-label">Particle Color:</label>
+      <input type="color" id="particle-color" class="settings-input">
+    </div>
+
+    <div class="settings-option">
+      <label for="background-color" class="settings-label">Background Color:</label>
+      <input type="color" id="background-color" class="settings-input">
+    </div>
+    
+    <div class="settings-option">
+      <label for="button-color" class="settings-label">Button Color:</label>
+      <input type="color" id="button-color" class="settings-input">
+    </div>
+
+    <div class="settings-option">
+      <label for="theme-select" class="settings-label">Select Theme:</label>
+      <select id="theme-select" class="settings-input">
+        <option value="0">Dark (Default)</option>
+        <option value="1">Cherry Blossom</option>
+        <option value="2">Terminal</option>
+      </select>
+    </div>
+    
+    <button class="settings-button">Save Settings</button>
   </div>
 
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
-    particlesJS("particles-js", {
+    particlesJS('particles-js', {
       particles: {
         number: {
           value: 80,
           density: {
             enable: true,
-            value_area: 800,
-          },
+            value_area: 800
+          }
         },
         color: {
-          value: "#ffffff",
+          value: '#ffffff'
         },
         shape: {
-          type: "circle",
+          type: 'polygon',
           stroke: {
             width: 0,
-            color: "#000000",
+            color: '#000000'
           },
           polygon: {
-            nb_sides: 5,
-          },
-          image: {
-            src: "img/github.svg",
-            width: 100,
-            height: 100,
-          },
+            nb_sides: 5
+          }
         },
         opacity: {
           value: 0.5,
@@ -201,8 +179,8 @@
             enable: false,
             speed: 1,
             opacity_min: 0.1,
-            sync: false,
-          },
+            sync: false
+          }
         },
         size: {
           value: 3,
@@ -211,160 +189,168 @@
             enable: false,
             speed: 40,
             size_min: 0.1,
-            sync: false,
-          },
+            sync: false
+          }
         },
         line_linked: {
           enable: true,
           distance: 150,
-          color: "#ffffff",
+          color: '#ffffff',
           opacity: 0.4,
-          width: 1,
+          width: 1
         },
         move: {
           enable: true,
-          speed: 2,
-          direction: "none",
+          speed: 6,
+          direction: 'none',
           random: false,
           straight: false,
-          out_mode: "out",
-          bounce: false,
+          out_mode: 'out',
           attract: {
             enable: false,
             rotateX: 600,
-            rotateY: 1200,
-          },
-        },
+            rotateY: 1200
+          }
+        }
       },
       interactivity: {
-        detect_on: "canvas",
+        detect_on: 'canvas',
         events: {
           onhover: {
-            enable: false,
-            mode: "repulse",
+            enable: true,
+            mode: 'grab'
           },
           onclick: {
-            enable: false,
-            mode: "push",
+            enable: true,
+            mode: 'push'
           },
-          resize: true,
+          resize: true
         },
         modes: {
           grab: {
-            distance: 400,
+            distance: 140,
             line_linked: {
-              opacity: 1,
-            },
+              opacity: 1
+            }
           },
           bubble: {
             distance: 400,
             size: 40,
             duration: 2,
             opacity: 8,
-            speed: 3,
+            speed: 3
           },
           repulse: {
             distance: 200,
-            duration: 0.4,
+            duration: 0.4
           },
           push: {
-            particles_nb: 4,
+            particles_nb: 4
           },
           remove: {
-            particles_nb: 2,
-          },
-        },
+            particles_nb: 2
+          }
+        }
       },
-      retina_detect: true,
+      retina_detect: true
     });
-  </script>
-  <script>
-    function handleSearch(event) {
-      if (event.key === 'Enter') {
-        const searchInput = document.getElementById('searchInput');
-        const searchQuery = searchInput.value.toLowerCase();
-        const searchResults = document.getElementById('searchResults');
 
-        // Define the search result data
-        const searchResultData = {
-          neomenu: {
-            title: 'Neo Menu',
-            description: 'An Old i-Ready Hack I made.',
-            link: 'https://lenn106.github.io/NeoMenu'
-          },
-          youtube: {
-            title: 'Youtube',
-            description: 'My Youtube Channel',
-            link: 'https://www.youtube.com/@Lenn106'
-          },
-          discord: {
-            title: 'My Discord Server',
-            description: 'Lenn106 Code Zone',
-            link: 'https://dsc.gg/lenn106'
-          },
-          github: {
-            title: 'My GitHub',
-            description: '@Lenn106',
-            link: 'https://github.com/lenn106'
-             },
-              youtube: {
-            title: 'Youtube',
-            description: 'My Youtube Channel',
-            link: 'https://www.youtube.com/@Lenn106'
-          },
-          chase: {
-            title: 'Chase',
-            description: 'I am sorry, the data for this search cannot be completed as the person described is too big.',
-            link: 'https://black-pages.github.io'
-          },
-        };
+    const interactivitySelect = document.getElementById('interactivity');
+    const particleColorInput = document.getElementById('particle-color');
+    const backgroundColorInput = document.getElementById('background-color');
+    const buttonColorInput = document.getElementById('button-color');
+    const buttons = document.getElementsByClassName('settings-button');
+    const footer = document.getElementsByClassName('footer')[0];
+    const themeSelect = document.getElementById('theme-select');
 
-        // Retrieve the blocked words
-        fetch('https://raw.githubusercontent.com/Lenn106/lenn106.github.io/998250d77ac5397e0274ba8872f18ea94aed52f2/swearlist')
-          .then(response => response.text())
-          .then(data => {
-            const blockedWords = data.split(',');
+    interactivitySelect.addEventListener('change', function() {
+      const interactivityValue = this.value;
+      const particles = window.pJSDom[0].pJS;
+      particles.interactivity.events.onhover.enable = interactivityValue === 'true';
+      particles.interactivity.events.onclick.enable = interactivityValue === 'true';
+      particles.interactivity.events.resize = true;
+    });
 
-            if (searchQuery.trim().length > 0) {
-              if (containsBlockedWords(searchQuery, blockedWords)) {
-                searchResults.innerHTML = 'This search contains blocked words.';
-                searchResults.classList.add('open');
-              } else if (searchQuery === 'chachaslide') {
-                const audio = new Audio('https://github.com/Lenn106/lenn106.github.io/raw/c6931511fce0f17c386f4fa3e1d925a93c15eb57/chacha.mp3');
-                audio.play();
-              } else if (searchQuery in searchResultData) {
-                const resultHTML = `
-                  <h3>${searchResultData[searchQuery].title}</h3>
-                  <p>${searchResultData[searchQuery].description}</p>
-                  <a href="${searchResultData[searchQuery].link}">Learn More</a>
-                  <button class="close-button" onclick="closeSearchResults()">X</button>
-                `;
-                searchResults.innerHTML = resultHTML;
-                searchResults.classList.add('open');
-              } else {
-                searchResults.innerHTML = `No results found for "${searchQuery}".`;
-                searchResults.classList.add('open');
-              }
-            } else {
-              searchResults.innerHTML = '';
-              searchResults.classList.remove('open');
-            }
-          })
-          .catch(error => {
-            console.error('Error retrieving blocked words:', error);
-          });
+    particleColorInput.addEventListener('change', function() {
+      const particleColorValue = this.value;
+      const particles = window.pJSDom[0].pJS;
+      particles.particles.color.value = particleColorValue;
+      particles.particles.line_linked.color = particleColorValue;
+      particles.fn.particlesRefresh();
+    });
+
+    backgroundColorInput.addEventListener('change', function() {
+      const backgroundColorValue = this.value;
+      document.body.style.backgroundColor = backgroundColorValue;
+    });
+
+    buttonColorInput.addEventListener('change', function() {
+      const buttonColorValue = this.value;
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].style.backgroundColor = buttonColorValue;
       }
+      footer.style.backgroundColor = buttonColorValue;
+    });
+
+    themeSelect.addEventListener('change', function() {
+      const themeIndex = parseInt(this.value);
+      loadTheme(themeIndex);
+    });
+
+    function loadTheme(themeIndex) {
+      const themes = [
+        {
+          interactivity: 'true',
+          particleColor: '#ffffff',
+          backgroundColor: '#111111',
+          buttonColor: '#333333'
+        },
+        {
+          interactivity: 'false',
+          particleColor: '#FF006F',
+          backgroundColor: '#190019',
+          buttonColor: '#9E005C'
+        },
+        {
+          interactivity: 'true',
+          particleColor: '#00FF04',
+          backgroundColor: '#000000',
+          buttonColor: '#121111'
+        }
+      ];
+
+      const theme = themes[themeIndex];
+      interactivitySelect.value = theme.interactivity;
+      particleColorInput.value = theme.particleColor;
+      backgroundColorInput.value = theme.backgroundColor;
+      buttonColorInput.value = theme.buttonColor;
+      
+      updateSettings();
+    }
+    
+    function updateSettings() {
+      const interactivityValue = interactivitySelect.value;
+      const particleColorValue = particleColorInput.value;
+      const backgroundColorValue = backgroundColorInput.value;
+      const buttonColorValue = buttonColorInput.value;
+
+      const particles = window.pJSDom[0].pJS;
+      particles.interactivity.events.onhover.enable = interactivityValue === 'true';
+      particles.interactivity.events.onclick.enable = interactivityValue === 'true';
+      particles.interactivity.events.resize = true;
+      particles.particles.color.value = particleColorValue;
+      particles.particles.line_linked.color = particleColorValue;
+      particles.fn.particlesRefresh();
+      document.body.style.backgroundColor = backgroundColorValue;
+      for (let i = 0; i < buttons.length; i++) {
+        buttons[i].style.backgroundColor = buttonColorValue;
+      }
+      footer.style.backgroundColor = buttonColorValue;
     }
 
-    function containsBlockedWords(query, blockedWords) {
-      const words = query.toLowerCase().split(' ');
-      return words.some(word => blockedWords.includes(word));
-    }
-
-    function closeSearchResults() {
-      const searchResults = document.getElementById('searchResults');
-      searchResults.innerHTML = '';
-      searchResults.classList.remove('open');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', updateSettings);
     }
   </script>
 </body>
+</html>
